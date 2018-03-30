@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" integrity="sha384-feJI7QwhOS+hwpX2zkaeJQjeiwlhOP+SdQDqhgvvo1DsjtiSQByFdThsxO669S2D" crossorigin="anonymous"></script>
+  <style>
+    @import "https://fonts.googleapis.com/css?family=Raleway:400,300,200,500,600,700";
+    .fa-spin-fast {
+      -webkit-animation: fa-spin-fast 0.2s infinite linear;
+      animation: fa-spin-fast 0.2s infinite linear;
+    }
+
+    @-webkit-keyframes fa-spin-fast {
+      0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+      }
+    }
+
+    @keyframes fa-spin-fast {
+      0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+      }
+    }
+
+    div>img {
+      width: auto;
+      height: auto;
+      max-height: 100%;
+      max-width: 100%;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+      .menu {
+  -webkit-filter: url("#shadowed-goo");
+          filter: url("#shadowed-goo");
+}
+
+.menu-item, .menu-open-button {
+  background: #ffc107;
+  border-radius: 100%;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 20px;
+  color: white;
+  text-align: center;
+  line-height: 80px;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform ease-out 200ms;
+  transition: -webkit-transform ease-out 200ms;
+  transition: transform ease-out 200ms;
+  transition: transform ease-out 200ms, -webkit-transform ease-out 200ms;
+}
+
+.menu-item {
+  top: 30px;
+  width: 40px;
+  height: 40px;
+}
+
+.menu-item i {
+  position: absolute;
+  top: 10px;
+  left:12px;
+}
+
+
+.menu-open {
+  display: none;
+}
+      .hamburger {
+  width: 25px;
+  height: 3px;
+  background: white;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -12.5px;
+  margin-top: -1.5px;
+  -webkit-transition: -webkit-transform 200ms;
+  transition: -webkit-transform 200ms;
+  transition: transform 200ms;
+  transition: transform 200ms, -webkit-transform 200ms;
+}
+
+.hamburger-1 {
+  -webkit-transform: translate3d(0, -8px, 0);
+          transform: translate3d(0, -8px, 0);
+}
+
+.hamburger-2 {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.hamburger-3 {
+  -webkit-transform: translate3d(0, 8px, 0);
+          transform: translate3d(0, 8px, 0);
+}
+
+.menu-open:checked + .menu-open-button .hamburger-1 {
+  -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
+          transform: translate3d(0, 0, 0) rotate(45deg);
+}
+.menu-open:checked + .menu-open-button .hamburger-2 {
+  -webkit-transform: translate3d(0, 0, 0) scale(0.1, 1);
+          transform: translate3d(0, 0, 0) scale(0.1, 1);
+}
+.menu-open:checked + .menu-open-button .hamburger-3 {
+  -webkit-transform: translate3d(0, 0, 0) rotate(-45deg);
+          transform: translate3d(0, 0, 0) rotate(-45deg);
+}
+
+.menu {
+  position: absolute;
+  left: 0.5%;
+  bottom: 10.5%;
+  width: 2%;
+  height: 3%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 20px;
+  text-align: left;
+}
+
+.menu-item:hover {
+  background: white;
+  color: #ffc107;
+}
+.menu-item:nth-child(3) {
+  -webkit-transition-duration: 180ms;
+          transition-duration: 180ms;
+}
+.menu-item:nth-child(4) {
+  -webkit-transition-duration: 180ms;
+          transition-duration: 180ms;
+}
+.menu-item:nth-child(5) {
+  -webkit-transition-duration: 180ms;
+          transition-duration: 180ms;
+}
+.menu-item:nth-child(6) {
+  -webkit-transition-duration: 180ms;
+          transition-duration: 180ms;
+}
+
+.menu-open-button {
+  z-index: 2;
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transition-duration: 400ms;
+          transition-duration: 400ms;
+  -webkit-transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+          transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+  cursor: pointer;
+}
+
+.menu-open-button:hover {
+  -webkit-transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+          transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+}
+
+.menu-open:checked + .menu-open-button {
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+  -webkit-transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+          transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+}
+
+.menu-open:checked ~ .menu-item {
+  -webkit-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+          transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.menu-open:checked ~ .menu-item:nth-child(3) {
+  -webkit-transition-duration: 170ms;
+          transition-duration: 170ms;
+  -webkit-transform: translate3d(80px, 0, 0);
+          transform: translate3d(80px, 0, 0);
+}
+.menu-open:checked ~ .menu-item:nth-child(4) {
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transform: translate3d(160px, 0, 0);
+          transform: translate3d(160px, 0, 0);
+}
+.menu-open:checked ~ .menu-item:nth-child(5) {
+  -webkit-transition-duration: 330ms;
+          transition-duration: 330ms;
+  -webkit-transform: translate3d(240px, 0, 0);
+          transform: translate3d(240px, 0, 0);
+}
+.menu-open:checked ~ .menu-item:nth-child(6) {
+  -webkit-transition-duration: 410ms;
+          transition-duration: 410ms;
+  -webkit-transform: translate3d(320px, 0, 0);
+          transform: translate3d(320px, 0, 0);
+}
+
+
+    
+
+    body {
+      /* background-color: #ECEFF1; */
+      color: #fff;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      background: none transparent;
+    }
+      img
+      {
+          border-top: 0px solid #26A69A;
+  border-bottom: 0px solid #00695C;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: block;
+  height: 150px;
+  width: 150px;
+  position: absolute;
+  right: 5px;
+  bottom: 10px;
+           background-size: cover;
+  overflow: hidden;
+  box-shadow: 0 0 100px 10px #fff;
+  transition: all ease 0.3s;
+      }
+      
+      img:hover {
+  border-top: 4px solid #26A69A;
+  border-bottom: 4px solid #00695C;
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 0 70px 10px #fff;
+}
+
+    h1 {
+      font-weight: 200;
+    }
+  </style>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+
+<body>
+  <section class="container">
+    <h1 class='heading'><b>About Us</b></h1>
+    <br/>
+      <p><b> 
+ <center>
+We are the best pizza makers in the town . Try us once and you will come again . Give us a chance and we will make sure that you are happy.
+<br>         Since we opened our first store in only few days back , we’ve been making our <br><b>thin crust pizza</b><br> from scratch in our stone hearth ovens for giving you an amazing pizza experience.</center><br> <center>That’s one of the reasons our unique pizzas are worth the wait!<br>
+We pride ourselves in offering you the very best pizza and we are planning to add some more stuff  and we value your patronage.</center>
+<br><center>
+***************************************30 mins max <b>Delivery time </b> else PIZZA FREE************************************
+<br>
+#ourpromise</center><br>
+          <br>
+          (It all started on march 27 2018, when I heard about this competiton. My favourite fast food is pizza, and immediately idea struck in my mind . I thought this is the time to show all my love towards pizza and hence I made this site.)
+          </b>
+</p>
+      
+      <nav class="menu">
+  <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
+  <label class="menu-open-button" for="menu-open">
+    <span class="hamburger hamburger-1"></span>
+    <span class="hamburger hamburger-2"></span>
+    <span class="hamburger hamburger-3"></span>
+  </label>
+
+  <a href="fb.html" target="_blank" class="menu-item"> <i class="fa fa-facebook"></i> </a>
+  <a href="fb.html" target="_blank" class="menu-item"> <i class="fa fa-instagram"></i> </a>
+  <a href="fb.html" target="_blank" class="menu-item"> <i class="fa fa-envelope"></i> </a>
+
+
+</nav>
+      
+
+  </section>
+<img src="img/map1.jpg" alt="location">
+
+</body>
+
+</html>
