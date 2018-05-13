@@ -11,3 +11,5 @@ or u can use url= "https://mansig16.github.io/"
 
 
 made for participating in the WebSMASH contest hosted by NIT HAMIRPUR on Hackerearth.
+
+this site won 3rd prize in the contest.
