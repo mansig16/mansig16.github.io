@@ -1,12 +1,6 @@
-# mansig16.github.io
+# PIZZA CORNER WEBSITE
 
+Made during the competition WEBSMASH held at NIT Hamirpur. 
 
-### MY FIRST WEBSITE
----
+It is hosted on domain  `https://mansig16.github.io/`
 
-It is hosted on domain - `nofear.ga`
-
-
-or u can use url= `https://mansig16.github.io/`
-
----
